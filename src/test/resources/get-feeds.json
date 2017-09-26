@@ -1,0 +1,192 @@
+{
+  "status": "OK",
+  "ts": 1506443652,
+  "results": {
+    "total": 858,
+    "limit": 10,
+    "page": 1,
+    "numPages": 86,
+    "feeds": [
+      {
+        "id": "karlsruher-verkehrsverbundes\/896",
+        "ty": "gtfs",
+        "t": "KVV GTFS",
+        "l": {
+          "id": 622,
+          "pid": 168,
+          "t": "Karlsruhe, Germany",
+          "n": "Karlsruhe",
+          "lat": 49.00689,
+          "lng": 8.403653
+        },
+        "u": {
+          "i": "https:\/\/www.kvv.de\/fahrplanauskunft\/fahrplanauskunft-efa\/opendata.html",
+          "d": "http:\/\/213.144.24.66\/GTFS\/google_transit.zip"
+        },
+        "latest": {
+          "ts": 1506430166
+        }
+      },
+      {
+        "id": "citymapper\/895",
+        "ty": "gtfsrealtime",
+        "t": "Smartbus Trip Updates",
+        "l": {
+          "id": 621,
+          "pid": 178,
+          "t": "London, UK",
+          "n": "London",
+          "lat": 51.507351,
+          "lng": -0.127758
+        },
+        "u": {
+          "i": "https:\/\/citymapper.com\/smartbus\/opendata",
+          "d": "http:\/\/opendata.citymapper.com\/uk-london\/trip_updates.pbf"
+        }
+      },
+      {
+        "id": "citymapper\/894",
+        "ty": "gtfs",
+        "t": "Smartbus GTFS",
+        "l": {
+          "id": 621,
+          "pid": 178,
+          "t": "London, UK",
+          "n": "London",
+          "lat": 51.507351,
+          "lng": -0.127758
+        },
+        "u": {
+          "i": "https:\/\/citymapper.com\/smartbus\/opendata",
+          "d": "http:\/\/opendata.citymapper.com\/uk-london\/gtfs.zip"
+        },
+        "latest": {
+          "ts": 1505883446
+        }
+      },
+      {
+        "id": "burlington-transit\/893",
+        "ty": "gtfsrealtime",
+        "t": "BURT Vehicle Positions",
+        "l": {
+          "id": 212,
+          "pid": 46,
+          "t": "Burlington, ON, Canada",
+          "n": "Burlington",
+          "lat": 43.32552,
+          "lng": -79.799032
+        },
+        "u": {
+          "d": "http:\/\/opendata.burlington.ca\/gtfs-rt\/GTFS_VehiclePositions.pb"
+        }
+      },
+      {
+        "id": "burlington-transit\/892",
+        "ty": "gtfsrealtime",
+        "t": "BURT Service Alerts",
+        "l": {
+          "id": 212,
+          "pid": 46,
+          "t": "Burlington, ON, Canada",
+          "n": "Burlington",
+          "lat": 43.32552,
+          "lng": -79.799032
+        },
+        "u": {
+          "d": "http:\/\/opendata.burlington.ca\/gtfs-rt\/GTFS_ServiceAlerts.pb"
+        }
+      },
+      {
+        "id": "burlington-transit\/891",
+        "ty": "gtfsrealtime",
+        "t": "BURT Trip Updates",
+        "l": {
+          "id": 212,
+          "pid": 46,
+          "t": "Burlington, ON, Canada",
+          "n": "Burlington",
+          "lat": 43.32552,
+          "lng": -79.799032
+        },
+        "u": {
+          "d": "http:\/\/opendata.burlington.ca\/gtfs-rt\/GTFS_TripUpdates.pb"
+        }
+      },
+      {
+        "id": "edmonton-transit-system\/890",
+        "ty": "gtfsrealtime",
+        "t": "ETS Service Alerts",
+        "l": {
+          "id": 43,
+          "pid": 42,
+          "t": "Edmonton, AB, Canada",
+          "n": "Edmonton",
+          "lat": 53.544389,
+          "lng": -113.490927
+        },
+        "u": {
+          "i": "https:\/\/data.edmonton.ca\/Transit\/Real-Time-Alerts-GTFS-PB-File-\/rqaa-jae6",
+          "d": "https:\/\/data.edmonton.ca\/download\/rqaa-jae6\/application%2Foctet-stream"
+        }
+      },
+      {
+        "id": "valleyride\/889",
+        "ty": "gtfs",
+        "t": "VRT GTFS",
+        "l": {
+          "id": 620,
+          "pid": 278,
+          "t": "Boise, ID, USA",
+          "n": "Boise",
+          "lat": 43.61871,
+          "lng": -116.214607
+        },
+        "u": {
+          "d": "http:\/\/www.valleyregionaltransit.org\/GTFS\/VRT_Transit1.zip"
+        },
+        "latest": {
+          "ts": 1505726606
+        }
+      },
+      {
+        "id": "stadt-wien\/888",
+        "ty": "gtfs",
+        "t": "Wiener Linien GTFS",
+        "l": {
+          "id": 619,
+          "pid": 618,
+          "t": "Vienna, Austria",
+          "n": "Vienna",
+          "lat": 48.208174,
+          "lng": 16.373819
+        },
+        "u": {
+          "i": "https:\/\/www.data.gv.at\/katalog\/dataset\/ab4a73b6-1c2d-42e1-b4d9-049e04889cf0",
+          "d": "https:\/\/www.wien.gv.at\/data\/zip\/gtfs.zip"
+        },
+        "latest": {
+          "ts": 1505797526
+        }
+      },
+      {
+        "id": "weekendbus\/887",
+        "ty": "gtfs",
+        "t": "Weekendbus GTFS",
+        "l": {
+          "id": 617,
+          "pid": 61,
+          "t": "Pest County, Hungary",
+          "n": "Pest County",
+          "lat": 47.448,
+          "lng": 19.461813
+        },
+        "u": {
+          "d": "http:\/\/apps.weekendbus.hu\/gtfs\/google_transit.zip"
+        },
+        "latest": {
+          "ts": 1505719886
+        }
+      }
+    ]
+  }
+}
