@@ -84,6 +84,49 @@ public class GetFeedsTest extends TestCase {
     }
 
     @Test
+    public void testGetFeedsWithTypeGtfsRealtime() throws IOException {
+        GetFeedsRequest request = new GetFeedsRequest.Builder(API_KEY)
+                .setApiEndpoint(GET_FEEDS_ENDPOINT_REALTIME)
+                .build();
+
+        assertEquals("https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/" +
+                        "get-feeds-realtime.json?key=dummyApiKey",
+                request.getUrl().toString());
+
+        GetFeedsResponse response = request.call();
+
+        assertEquals("OK", response.getStatus());
+        assertEquals(Integer.valueOf(1506454429), response.getTimestamp());
+
+        Results results = response.getResults();
+
+        assertEquals(Integer.valueOf(134), results.getTotal());
+        assertEquals(Integer.valueOf(10), results.getLimit());
+        assertEquals(Integer.valueOf(1), results.getPage());
+        assertEquals(Integer.valueOf(14), results.getNumPages());
+
+        List<Feed> feeds = results.getFeeds();
+        Feed feed = feeds.get(0);
+
+        assertEquals("citymapper/895", feed.getId());
+        assertEquals("gtfsrealtime", feed.getType());
+        assertEquals("Smartbus Trip Updates", feed.getTitle());
+
+        Location location = feed.getLocation();
+
+        assertEquals(Integer.valueOf(621), location.getId());
+        assertEquals(Integer.valueOf(178), location.getParentId());
+        assertEquals("London", location.getTitle());
+        assertEquals("London, UK", location.getTitleWithRegion());
+        assertEquals(51.507351d, location.getLat());
+        assertEquals(-0.127758d, location.getLng());
+
+        Urls urls = feed.getUrls();
+        assertEquals("https://citymapper.com/smartbus/opendata", urls.getInfoUrl());
+        assertEquals("http://opendata.citymapper.com/uk-london/trip_updates.pbf", urls.getDownloadUrl());
+    }
+
+    @Test
     public void testRequestParameters() throws IOException {
         GetFeedsRequest request = new GetFeedsRequest.Builder(API_KEY)
                 .setApiEndpoint(GET_FEEDS_ENDPOINT)
