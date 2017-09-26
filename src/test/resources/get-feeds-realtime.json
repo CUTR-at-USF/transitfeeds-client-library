@@ -8,7 +8,7 @@
     "numPages": 14,
     "feeds": [
       {
-        "id": "citymapper\/895",
+        "id": "citymapper/895",
         "ty": "gtfsrealtime",
         "t": "Smartbus Trip Updates",
         "l": {
@@ -20,12 +20,12 @@
           "lng": -0.127758
         },
         "u": {
-          "i": "https:\/\/citymapper.com\/smartbus\/opendata",
-          "d": "http:\/\/opendata.citymapper.com\/uk-london\/trip_updates.pbf"
+          "i": "https://citymapper.com/smartbus/opendata",
+          "d": "http://opendata.citymapper.com/uk-london/trip_updates.pbf"
         }
       },
       {
-        "id": "burlington-transit\/893",
+        "id": "burlington-transit/893",
         "ty": "gtfsrealtime",
         "t": "BURT Vehicle Positions",
         "l": {
@@ -37,11 +37,11 @@
           "lng": -79.799032
         },
         "u": {
-          "d": "http:\/\/opendata.burlington.ca\/gtfs-rt\/GTFS_VehiclePositions.pb"
+          "d": "http://opendata.burlington.ca/gtfs-rt/GTFS_VehiclePositions.pb"
         }
       },
       {
-        "id": "burlington-transit\/892",
+        "id": "burlington-transit/892",
         "ty": "gtfsrealtime",
         "t": "BURT Service Alerts",
         "l": {
@@ -53,11 +53,11 @@
           "lng": -79.799032
         },
         "u": {
-          "d": "http:\/\/opendata.burlington.ca\/gtfs-rt\/GTFS_ServiceAlerts.pb"
+          "d": "http://opendata.burlington.ca/gtfs-rt/GTFS_ServiceAlerts.pb"
         }
       },
       {
-        "id": "burlington-transit\/891",
+        "id": "burlington-transit/891",
         "ty": "gtfsrealtime",
         "t": "BURT Trip Updates",
         "l": {
@@ -69,11 +69,11 @@
           "lng": -79.799032
         },
         "u": {
-          "d": "http:\/\/opendata.burlington.ca\/gtfs-rt\/GTFS_TripUpdates.pb"
+          "d": "http://opendata.burlington.ca/gtfs-rt/GTFS_TripUpdates.pb"
         }
       },
       {
-        "id": "edmonton-transit-system\/890",
+        "id": "edmonton-transit-system/890",
         "ty": "gtfsrealtime",
         "t": "ETS Service Alerts",
         "l": {
@@ -85,12 +85,12 @@
           "lng": -113.490927
         },
         "u": {
-          "i": "https:\/\/data.edmonton.ca\/Transit\/Real-Time-Alerts-GTFS-PB-File-\/rqaa-jae6",
-          "d": "https:\/\/data.edmonton.ca\/download\/rqaa-jae6\/application%2Foctet-stream"
+          "i": "https://data.edmonton.ca/Transit/Real-Time-Alerts-GTFS-PB-File-/rqaa-jae6",
+          "d": "https://data.edmonton.ca/download/rqaa-jae6/application%2Foctet-stream"
         }
       },
       {
-        "id": "lane-transit-district\/880",
+        "id": "lane-transit-district/880",
         "ty": "gtfsrealtime",
         "t": "LTD Service Alerts",
         "l": {
@@ -102,12 +102,12 @@
           "lng": -123.086754
         },
         "u": {
-          "i": "http:\/\/oregon-gtfs.com\/",
-          "d": "http:\/\/feed.ltd.org\/gtfs-realtime\/alerts"
+          "i": "http://oregon-gtfs.com/",
+          "d": "http://feed.ltd.org/gtfs-realtime/alerts"
         }
       },
       {
-        "id": "lane-transit-district\/879",
+        "id": "lane-transit-district/879",
         "ty": "gtfsrealtime",
         "t": "LTD Trip Updates",
         "l": {
@@ -119,12 +119,12 @@
           "lng": -123.086754
         },
         "u": {
-          "i": "http:\/\/oregon-gtfs.com\/",
-          "d": "http:\/\/feed.ltd.org\/gtfs-realtime\/tripupdate"
+          "i": "http://oregon-gtfs.com/",
+          "d": "http://feed.ltd.org/gtfs-realtime/tripupdate"
         }
       },
       {
-        "id": "lane-transit-district\/878",
+        "id": "lane-transit-district/878",
         "ty": "gtfsrealtime",
         "t": "LTD Vehicle Positions",
         "l": {
@@ -136,12 +136,12 @@
           "lng": -123.086754
         },
         "u": {
-          "i": "http:\/\/oregon-gtfs.com\/",
-          "d": "http:\/\/feed.ltd.org\/gtfs-realtime\/vehicle"
+          "i": "http://oregon-gtfs.com/",
+          "d": "http://feed.ltd.org/gtfs-realtime/vehicle"
         }
       },
       {
-        "id": "city-of-kingston\/877",
+        "id": "city-of-kingston/877",
         "ty": "gtfsrealtime",
         "t": "Kingston Transit Vehicle Positions",
         "l": {
@@ -153,12 +153,12 @@
           "lng": -76.485954
         },
         "u": {
-          "i": "https:\/\/www.cityofkingston.ca\/documents\/10180\/144997\/GIS_OpenDataLicense.pdf\/72f5a9ac-afbc-4fe3-959d-9111c9393bfa",
-          "d": "http:\/\/kingston.metrolinx.tmix.se\/gtfs-realtime\/vehicleupdates.pb"
+          "i": "https://www.cityofkingston.ca/documents/10180/144997/GIS_OpenDataLicense.pdf/72f5a9ac-afbc-4fe3-959d-9111c9393bfa",
+          "d": "http://kingston.metrolinx.tmix.se/gtfs-realtime/vehicleupdates.pb"
         }
       },
       {
-        "id": "city-of-kingston\/876",
+        "id": "city-of-kingston/876",
         "ty": "gtfsrealtime",
         "t": "Kingston Transit Trip Updates",
         "l": {
@@ -170,8 +170,8 @@
           "lng": -76.485954
         },
         "u": {
-          "i": "https:\/\/www.cityofkingston.ca\/documents\/10180\/144997\/GIS_OpenDataLicense.pdf\/72f5a9ac-afbc-4fe3-959d-9111c9393bfa",
-          "d": "http:\/\/kingston.metrolinx.tmix.se\/gtfs-realtime\/tripupdates.pb"
+          "i": "https://www.cityofkingston.ca/documents/10180/144997/GIS_OpenDataLicense.pdf/72f5a9ac-afbc-4fe3-959d-9111c9393bfa",
+          "d": "http://kingston.metrolinx.tmix.se/gtfs-realtime/tripupdates.pb"
         }
       }
     ]
