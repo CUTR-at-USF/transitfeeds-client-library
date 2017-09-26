@@ -15,21 +15,21 @@
  */
 package edu.usf.cutr.transitfeeds;
 
-import edu.usf.cutr.transitfeeds.model.Results;
+import edu.usf.cutr.transitfeeds.model.*;
 import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Tests for GetFeedsRequest and SearchResponse
  */
 public class GetFeedsTest extends TestCase {
 
-    private static final String SIMPLE_SEARCH_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/transitfeeds-client-library/master/src/test/resources/get-feeds.json";
-    private static final String SEARCH_WITH_FOCUS_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/transitfeeds-client-library/master/src/test/resources/search-with-focus.json";
+    private static final String GET_FEEDS_ENDPOINT = "https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/get-feeds.json";
+    private static final String GET_FEEDS_ENDPOINT_REALTIME = "https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/get-feeds-realtime.json";
     private static final String API_KEY = "dummyApiKey";
-    private static final String TEXT = "subway";
 
     @Override
     protected void setUp() {
@@ -38,13 +38,13 @@ public class GetFeedsTest extends TestCase {
     }
 
     @Test
-    public void testSimpleSearch() throws IOException {
+    public void testGetFeeds() throws IOException {
         GetFeedsRequest request = new GetFeedsRequest.Builder(API_KEY)
-                .setApiEndpoint(SIMPLE_SEARCH_ENDPOINT)
+                .setApiEndpoint(GET_FEEDS_ENDPOINT)
                 .build();
 
-        assertEquals("https://raw.githubusercontent.com/CUTR-at-USF/transitfeeds-client-library/master/src/test/resources/" +
-                        "get-feeds.json",
+        assertEquals("https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/" +
+                        "get-feeds.json?key=dummyApiKey",
                 request.getUrl().toString());
 
         GetFeedsResponse response = request.call();
@@ -57,80 +57,51 @@ public class GetFeedsTest extends TestCase {
         assertEquals(Integer.valueOf(858), results.getTotal());
         assertEquals(Integer.valueOf(10), results.getLimit());
         assertEquals(Integer.valueOf(1), results.getPage());
+        assertEquals(Integer.valueOf(86), results.getNumPages());
 
-        // TODO - continue at numPages
+        List<Feed> feeds = results.getFeeds();
+        Feed feed = feeds.get(0);
 
-//        Point p;
-//        Feature[] f = response.getFeatures();
-//
-//        p = (Point) f[0].getGeometry();
-//        assertEquals(35.798729, p.getCoordinates().getLatitude());
-//        assertEquals(-117.872003, p.getCoordinates().getLongitude());
-//        assertEquals("node:2357470967", (String) f[0].getProperties().get("id"));
-//        assertEquals("venue", f[0].getProperties().get("layer"));
-//        assertEquals("Subway", f[0].getProperties().get("name"));
-//        assertEquals(0.6, f[0].getProperties().get("confidence"));
-//        assertEquals("United States", f[0].getProperties().get("country"));
-//        assertEquals("California", f[0].getProperties().get("region"));
-//        assertEquals("Inyo County", f[0].getProperties().get("county"));
-//        assertEquals("Subway, Pearsonville, CA, USA", f[0].getProperties().get("label"));
-//
-//        p = (Point) f[1].getGeometry();
-//        assertEquals(-37.708951, p.getCoordinates().getLatitude());
-//        assertEquals(144.961816, p.getCoordinates().getLongitude());
-//        assertEquals("node:2321936555", (String) f[1].getProperties().get("id"));
-//        assertEquals("venue", f[1].getProperties().get("layer"));
-//        assertEquals("Subway", f[1].getProperties().get("name"));
-//        assertEquals(0.6, f[1].getProperties().get("confidence"));
-//        assertEquals("Australia", f[1].getProperties().get("country"));
-//        assertEquals("Victoria", f[1].getProperties().get("region"));
-//        assertEquals("Moreland (C)", f[1].getProperties().get("county"));
-//        assertEquals("Fawkner", f[1].getProperties().get("localadmin"));
-//        assertEquals("Fawkner", f[1].getProperties().get("locality"));
-//        assertEquals("Fawkner", f[1].getProperties().get("neighbourhood"));
-//        assertEquals("Subway, Fawkner, Victoria, Australia", f[1].getProperties().get("label"));
-//
-//        Float[] bbox = response.getBbox();
-//        assertEquals(-122.33372F, bbox[0]);
-//        assertEquals(-37.708951F, bbox[1]);
-//        assertEquals(152.91174F, bbox[2]);
-//        assertEquals(64.166014F, bbox[3]);
+        assertEquals("karlsruher-verkehrsverbundes/896", feed.getId());
+        assertEquals("gtfs", feed.getType());
+        assertEquals("KVV GTFS", feed.getTitle());
+
+        Location location = feed.getLocation();
+
+        assertEquals(Integer.valueOf(622), location.getId());
+        assertEquals(Integer.valueOf(168), location.getParentId());
+        assertEquals("Karlsruhe", location.getTitle());
+        assertEquals("Karlsruhe, Germany", location.getTitleWithRegion());
+        assertEquals(49.00689d, location.getLat());
+        assertEquals(8.403653d, location.getLng());
+
+        Urls urls = feed.getUrls();
+        assertEquals("https://www.kvv.de/fahrplanauskunft/fahrplanauskunft-efa/opendata.html", urls.getInfoUrl());
+        assertEquals("http://213.144.24.66/GTFS/google_transit.zip", urls.getDownloadUrl());
+
+        Latest l = feed.getLatest();
+        assertEquals(Integer.valueOf(1506430166), l.getTimestamp());
     }
 
     @Test
     public void testRequestParameters() throws IOException {
-        // TODO - convert to GetFeeds
+        GetFeedsRequest request = new GetFeedsRequest.Builder(API_KEY)
+                .setApiEndpoint(GET_FEEDS_ENDPOINT)
+                .setType("gtfs")
+                .setDescendants("1")
+                .setLimit(10)
+                .setLocation("1")
+                .setPage(1)
+                .build();
 
-//        GetFeedsRequest request = new GetFeedsRequest.Builder(API_KEY, TEXT)
-//                .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
-//                .setFocusPoint(28.061062d, -82.4132d)
-//                .setSources("osm")
-//                .setSize(35)
-//                .setBoundaryRect(27.959868, -82.515286, 28.131471, -82.367646)
-//                .build();
-//
-//        assertEquals("https://raw.githubusercontent.com/CUTR-at-USF/transitfeeds-client-library/master/src/test/resources/" +
-//                        "search-with-focus.json?text=subway&api_key=dummyApiKey&sources=osm&size=35" +
-//                        "&focus.point.lat=28.061062&focus.point.lon=-82.4132" +
-//                        "&boundary.rect.min_lat=27.959868&boundary.rect.min_lon=-82.515286" +
-//                        "&boundary.rect.max_lat=28.131471&boundary.rect.max_lon=-82.367646",
-//                request.getUrl().toString());
-//
-//        // Test space in text parameter
-//        request = new GetFeedsRequest.Builder(API_KEY, "burger king")
-//                .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
-//                .setFocusPoint(28.061062d, -82.4132d)
-//                .setSources("osm")
-//                .setSize(35)
-//                .setBoundaryRect(27.959868, -82.515286, 28.131471, -82.367646)
-//                .build();
-//
-//        assertEquals("https://raw.githubusercontent.com/CUTR-at-USF/transitfeeds-client-library/master/src/test/resources/" +
-//                        "search-with-focus.json?text=burger+king&api_key=dummyApiKey&sources=osm&size=35" +
-//                        "&focus.point.lat=28.061062&focus.point.lon=-82.4132" +
-//                        "&boundary.rect.min_lat=27.959868&boundary.rect.min_lon=-82.515286" +
-//                        "&boundary.rect.max_lat=28.131471&boundary.rect.max_lon=-82.367646",
-//                request.getUrl().toString());
-
+        assertEquals("https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/" +
+                        "get-feeds.json" +
+                        "?key=dummyApiKey" +
+                        "&location=1" +
+                        "&descendants=1" +
+                        "&page=1" +
+                        "&limit=10" +
+                        "&type=gtfs",
+                request.getUrl().toString());
     }
 }
