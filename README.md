@@ -89,7 +89,7 @@ We've set up a Maven repository to hold the snapshot artifacts from this project
 
 At CUTR, we should run the following at the command-line to create a new artifact:
 ~~~
-mvn -DaltDeploymentRepository=cutr-snapshots::default::file:"/Git Projects/cutr-mvn-repo/snapshots" clean deploy
+mvn -Dgpg.skip -DaltDeploymentRepository=cutr-snapshots::default::file:"/Git Projects/cutr-mvn-repo/snapshots" clean deploy
 ~~~
 
 Then commit using Git and push new artifacts to Github.
