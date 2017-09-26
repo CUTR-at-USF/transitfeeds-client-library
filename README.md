@@ -79,7 +79,7 @@ Managed via Maven:
 ### Build the project
 
 * IntelliJ - Clean and build the project
-* Maven - `mvn install` 
+* Maven - `mvn install -Dmaven.javadoc.skip=true -B -V -Dgpg.skip` 
 
 ### CUTR Release Process
 
