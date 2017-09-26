@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Tests for GetFeedsRequest and SearchResponse
+ * Tests for GetFeedsRequest and GetFeedsResponse
  */
 public class GetFeedsTest extends TestCase {
 
