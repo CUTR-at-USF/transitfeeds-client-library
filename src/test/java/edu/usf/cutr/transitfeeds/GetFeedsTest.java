@@ -29,6 +29,7 @@ public class GetFeedsTest extends TestCase {
 
     private static final String GET_FEEDS_ENDPOINT = "https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/get-feeds.json";
     private static final String GET_FEEDS_ENDPOINT_REALTIME = "https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/get-feeds-realtime.json";
+    private static final String GET_FEEDS_ENDPOINT_REALTIME_URL_ARRAY = "https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/get-feeds-realtime-url-array.json";
     private static final String API_KEY = "dummyApiKey";
 
     @Override
@@ -124,6 +125,48 @@ public class GetFeedsTest extends TestCase {
         Urls urls = feed.getUrls();
         assertEquals("https://citymapper.com/smartbus/opendata", urls.getInfoUrl());
         assertEquals("http://opendata.citymapper.com/uk-london/trip_updates.pbf", urls.getDownloadUrl());
+    }
+
+    @Test
+    public void testGetFeedsWithUrlArray() throws IOException {
+        GetFeedsRequest request = new GetFeedsRequest.Builder(API_KEY)
+                .setApiEndpoint(GET_FEEDS_ENDPOINT_REALTIME_URL_ARRAY)
+                .build();
+
+        assertEquals("https://github.com/CUTR-at-USF/transitfeeds-client-library/raw/master/src/test/resources/" +
+                        "get-feeds-realtime-url-array.json?key=dummyApiKey",
+                request.getUrl().toString());
+
+        GetFeedsResponse response = request.call();
+
+        assertEquals("OK", response.getStatus());
+        assertEquals(Integer.valueOf(1506523205), response.getTimestamp());
+
+        Results results = response.getResults();
+
+        assertEquals(Integer.valueOf(134), results.getTotal());
+        assertEquals(Integer.valueOf(10), results.getLimit());
+        assertEquals(Integer.valueOf(11), results.getPage());
+        assertEquals(Integer.valueOf(14), results.getNumPages());
+
+        List<Feed> feeds = results.getFeeds();
+        Feed feed = feeds.get(9);
+
+        assertEquals("translink-vancouver/397", feed.getId());
+        assertEquals("gtfsrealtime", feed.getType());
+        assertEquals("TransLink Trip Updates", feed.getTitle());
+
+        Location location = feed.getLocation();
+
+        assertEquals(Integer.valueOf(45), location.getId());
+        assertEquals(Integer.valueOf(44), location.getParentId());
+        assertEquals("Vancouver", location.getTitle());
+        assertEquals("Vancouver, BC, Canada", location.getTitleWithRegion());
+        assertEquals(49.261226d, location.getLat());
+        assertEquals(-123.113927d, location.getLng());
+
+        Urls urls = feed.getUrls();
+        assertNull(urls);
     }
 
     @Test

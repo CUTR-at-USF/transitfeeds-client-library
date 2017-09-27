@@ -29,7 +29,8 @@ import java.net.URL;
 public class GetFeedsRequest {
 
     private static ObjectMapper mMapper = new ObjectMapper()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+            .configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT, true);
     private static ObjectReader mReader = mMapper.readerFor(GetFeedsResponse.class);
 
     private URL mUrl;
