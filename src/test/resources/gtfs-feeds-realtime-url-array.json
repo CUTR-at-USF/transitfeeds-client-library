@@ -1,0 +1,170 @@
+{
+  "status": "OK",
+  "ts": 1506523205,
+  "results": {
+    "total": 134,
+    "limit": 10,
+    "page": 11,
+    "numPages": 14,
+    "feeds": [
+      {
+        "id": "thunder-bay-transit/431",
+        "ty": "gtfsrealtime",
+        "t": "Thunder Bay Transit Trip Updates",
+        "l": {
+          "id": 158,
+          "pid": 46,
+          "t": "Thunder Bay, ON, Canada",
+          "n": "Thunder Bay",
+          "lat": 48.380895,
+          "lng": -89.247682
+        },
+        "u": {
+          "d": "http://api.nextlift.ca/gtfs-realtime/tripupdates.pb"
+        }
+      },
+      {
+        "id": "thunder-bay-transit/430",
+        "ty": "gtfsrealtime",
+        "t": "Thunder Bay Transit Vehicle Positions",
+        "l": {
+          "id": 158,
+          "pid": 46,
+          "t": "Thunder Bay, ON, Canada",
+          "n": "Thunder Bay",
+          "lat": 48.380895,
+          "lng": -89.247682
+        },
+        "u": {
+          "d": "http://api.nextlift.ca/gtfs-realtime/vehicleupdates.pb"
+        }
+      },
+      {
+        "id": "transit-authority-of-river-city/427",
+        "ty": "gtfsrealtime",
+        "t": "TARC Vehicle Positions",
+        "l": {
+          "id": 199,
+          "pid": 198,
+          "t": "Louisville, KY, USA",
+          "n": "Louisville",
+          "lat": 38.252665,
+          "lng": -85.758456
+        },
+        "u": {
+          "d": "http://gtfsrealtime.ridetarc.org/vehicle/VehiclePositions.pb"
+        }
+      },
+      {
+        "id": "transit-authority-of-river-city/426",
+        "ty": "gtfsrealtime",
+        "t": "TARC Trip Updates",
+        "l": {
+          "id": 199,
+          "pid": 198,
+          "t": "Louisville, KY, USA",
+          "n": "Louisville",
+          "lat": 38.252665,
+          "lng": -85.758456
+        },
+        "u": {
+          "d": "http://gtfsrealtime.ridetarc.org/trip_update/TripUpdates.pb"
+        }
+      },
+      {
+        "id": "transit-authority-of-river-city/425",
+        "ty": "gtfsrealtime",
+        "t": "TARC Service Alerts",
+        "l": {
+          "id": 199,
+          "pid": 198,
+          "t": "Louisville, KY, USA",
+          "n": "Louisville",
+          "lat": 38.252665,
+          "lng": -85.758456
+        },
+        "u": {
+          "d": "http://gtfsrealtime.ridetarc.org/alerts/Alerts.pb"
+        }
+      },
+      {
+        "id": "mta/421",
+        "ty": "gtfsrealtime",
+        "t": "Long Island Rail Road Trip Updates",
+        "l": {
+          "id": 91,
+          "pid": 84,
+          "t": "New York, NY, USA",
+          "n": "New York",
+          "lat": 40.714353,
+          "lng": -74.005973
+        },
+        "u": {
+          "i": "http://datamine.mta.info"
+        }
+      },
+      {
+        "id": "mta/420",
+        "ty": "gtfsrealtime",
+        "t": "Metro-North Railroad Trip Updates",
+        "l": {
+          "id": 91,
+          "pid": 84,
+          "t": "New York, NY, USA",
+          "n": "New York",
+          "lat": 40.714353,
+          "lng": -74.005973
+        },
+        "u": {
+          "i": "http://datamine.mta.info"
+        }
+      },
+      {
+        "id": "mta/407",
+        "ty": "gtfsrealtime",
+        "t": "NYC Subway Real-Time Estimates (Staten Island Railway)",
+        "l": {
+          "id": 91,
+          "pid": 84,
+          "t": "New York, NY, USA",
+          "n": "New York",
+          "lat": 40.714353,
+          "lng": -74.005973
+        },
+        "u": {
+          "i": "http://datamine.mta.info/"
+        }
+      },
+      {
+        "id": "translink-vancouver/398",
+        "ty": "gtfsrealtime",
+        "t": "TransLink Vehicle Positions",
+        "l": {
+          "id": 45,
+          "pid": 44,
+          "t": "Vancouver, BC, Canada",
+          "n": "Vancouver",
+          "lat": 49.261226,
+          "lng": -123.113927
+        },
+        "u": [
+        ]
+      },
+      {
+        "id": "translink-vancouver/397",
+        "ty": "gtfsrealtime",
+        "t": "TransLink Trip Updates",
+        "l": {
+          "id": 45,
+          "pid": 44,
+          "t": "Vancouver, BC, Canada",
+          "n": "Vancouver",
+          "lat": 49.261226,
+          "lng": -123.113927
+        },
+        "u": [
+        ]
+      }
+    ]
+  }
+}
