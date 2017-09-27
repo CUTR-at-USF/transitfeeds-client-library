@@ -55,25 +55,6 @@ public class GetFeedsRequest {
     }
 
     /**
-     * A temporary method to test requests
-     * TODO - remove this method and create demo project
-     *
-     * @param args main program arguments
-     */
-    public static void main(String[] args) {
-        try {
-            String apiKey = "76edc18d-54d4-4132-9f53-e8e25be976e7";
-            GetFeedsResponse response = new GetFeedsRequest.Builder(apiKey)
-                    .setType("gtfsrealtime")
-                    .build()
-                    .call();
-            System.out.println(response.toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /**
      * Returns the URL that will be used in the API request
      *
      * @return the URL that will be used in the API request
